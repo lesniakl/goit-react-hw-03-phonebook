@@ -31,9 +31,9 @@ export default class App extends Component {
       name,
       number,
     };
-    this.setState(prevState => {
-      return { contacts: [...prevState.contacts, newContact] };
-    });
+    const newContacts = [...this.state.contacts, newContact];
+    this.setState({ contacts: newContacts });
+    localStorage.setItem('contacts', JSON.stringify(newContacts));
     form.reset();
   };
 
@@ -46,7 +46,17 @@ export default class App extends Component {
       contact => contact.name !== e.target.name
     );
     this.setState({ contacts: [...newContacts] });
+    localStorage.setItem('contacts', JSON.stringify(newContacts));
   };
+
+  componentDidMount() {
+    const savedContacts = localStorage.getItem('contacts');
+    const parsedContacts = JSON.parse(savedContacts);
+    if (!parsedContacts) {
+      return;
+    }
+    this.setState({ contacts: parsedContacts });
+  }
 
   render() {
     return (
