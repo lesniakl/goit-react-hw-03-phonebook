@@ -1,8 +1,9 @@
-# SimplePhonebook app
+# SimplePhonebook app v2
 
 This is a React app built using
 [Create React App](https://github.com/facebook/create-react-app) as a part of
-GoIT course. It allows you to save phone numbers together with names.
+GoIT course. It allows you to save phone numbers together with names and store
+them in your browser's local storage.
 
 ## Features
 
@@ -23,9 +24,6 @@ New entries cannot share the same names with exisiting ones (this feature also
 is not case sensitive):
 
 ![Adding new contact with exisiting name](./assets/interface-3.png)
-
-**PLEASE NOTE THAT AT THIS POINT YOU ARE NOT ABLE TO SAVE COLLECTED DATA BETWEEN
-SESSIONS**
 
 ## Setup
 
